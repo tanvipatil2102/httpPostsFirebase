@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-12">
+        <div class="text-right">
+            <button mat-raised-button color="primary" routerLink="addPost">Add Post</button>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-md-4" *ngFor="let post of postsArray">
+        <mat-card class="h-100">
+            <mat-card-header>
+                <mat-card-title>{{post.title}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="p-3">{{post.content}}</mat-card-content>
+            <mat-card-footer class="pl-4 pb-3" >
+                <button mat-raised-button color="accent"
+                [routerLink]="[post.id]"
+                >View More...</button>
+            </mat-card-footer>
+        </mat-card>
+    </div>
+</div>
