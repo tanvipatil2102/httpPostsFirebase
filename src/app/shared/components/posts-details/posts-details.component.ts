@@ -44,9 +44,10 @@ export class PostsDetailsComponent implements OnInit {
     this._matDialog.open(GetConfirmComponent, matConfig)
         .afterClosed().subscribe(res => {
           if(res){
-            this._postService.removePost(this.postObj)
+            this._postService.removePost(this.postId)
                 .subscribe({
                   next : res => {
+                    console.log(res)
                     this._router.navigate(['posts'])
                   },
                   error : err => {

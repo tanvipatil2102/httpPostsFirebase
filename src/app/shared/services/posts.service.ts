@@ -30,7 +30,7 @@ export class PostsService {
     return this._http.patch(`${this.BASE_URL}/posts/${post.id}.json`, post)
   }
 
-  removePost(post: Ipost){
-    return this._http.delete(`${this.BASE_URL}/posts/${post.id}.json`)
+  removePost(post: string){
+    return this._http.delete(`${this.BASE_URL}/posts/${post}.json`)
   }
 }
